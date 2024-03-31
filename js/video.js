@@ -14,7 +14,7 @@ play.addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
 	// udpdate volume
-	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
+	document.getElementById("volume").innerHTML = video.volume + "%";
 });
 
 var pause = document.getElementById("pause");
