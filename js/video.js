@@ -1,4 +1,4 @@
-var video = document.getElementById("player1");
+var video;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -8,29 +8,6 @@ window.addEventListener("load", function() {
 	video.loop = false;
 });
 
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// 	video.play();
-	
-// 	// todo: update volume
-	
-// });
-
-// // pause button
-// document.querySelector("#pause").addEventListener("click", function() {
-// 	console.log("Pause Video");
-// 	video = document.getElementById("player1");
-// 	video.pause();
-// });
-
-// // Slow the current video speed by 10% each time the button is clicked and log the new speed to the console.  
-// document.querySelector("#slower").addEventListener("click", function() {
-// 	console.log("Slow Down Video");
-// 	video = document.getElementById("player1");
-// 	video.playbackRate *= 0.9;
-// 	console.log("Speed is now: " + video.playbackRate);
-// }
-// );
 
 var play = document.getElementById("play");
 play.addEventListener("click", function() {
@@ -71,4 +48,39 @@ skip.addEventListener("click", function() {
 		video.play();
 	}
 	console.log("Current location of video is " + video.currentTime);
+});
+// Mute/unmute the video and update the text in the button.
+var mute = document.getElementById("mute");
+mute.addEventListener("click", function() {
+	if (video.muted == true) {
+		video.muted = false;
+		console.log("Unmuted");
+		mute.innerHTML = "Mute";
+	} else {
+		video.muted = true;
+		console.log("Muted");
+		mute.innerHTML = "Unmute";
+	}
+});
+
+//Change the volume based on the slider and update the volume information.
+var slider = document.getElementById("slider");
+slider.addEventListener("change", function() {
+	console.log(this.value);
+	video.volume = this.value / 100;
+	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
+});
+
+// Utilize the existing oldSchool class on the video element
+var vintage = document.getElementById("vintage");
+vintage.addEventListener("click", function() {
+	console.log("Old School");
+	video.classList.add("oldSchool");
+});
+
+// Remove the oldSchool class from the video.
+var orig = document.getElementById("orig");
+orig.addEventListener("click", function() {
+	console.log("Original");
+	video.classList.remove("oldSchool");
 });
