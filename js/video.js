@@ -54,11 +54,9 @@ var mute = document.getElementById("mute");
 mute.addEventListener("click", function() {
 	if (video.muted == true) {
 		video.muted = false;
-		console.log("Unmuted");
 		mute.innerHTML = "Mute";
 	} else {
-		video.muted = true;
-		console.log("Muted");
+		video.volume = 0;
 		mute.innerHTML = "Unmute";
 	}
 });
@@ -67,20 +65,18 @@ mute.addEventListener("click", function() {
 var slider = document.getElementById("slider");
 slider.addEventListener("change", function() {
 	console.log(this.value);
-	video.volume = this.value / 100;
-	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
+	video.volume = this.value;
+	document.getElementById("volume").innerHTML = video.volume + "%";
 });
 
 // Utilize the existing oldSchool class on the video element
 var vintage = document.getElementById("vintage");
 vintage.addEventListener("click", function() {
-	console.log("Old School");
 	video.classList.add("oldSchool");
 });
 
 // Remove the oldSchool class from the video.
 var orig = document.getElementById("orig");
 orig.addEventListener("click", function() {
-	console.log("Original");
 	video.classList.remove("oldSchool");
 });
