@@ -10,7 +10,6 @@ var skip;
 var vintage;
 var orig;
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM fully loaded. Good job opening the window");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
