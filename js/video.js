@@ -26,7 +26,7 @@ play.addEventListener("click", function() {
 	video = document.getElementById("player1");
 	video.play();
 	// udpdate volume
-	document.getElementById("volume").innerHTML = video.volume + "%";
+	document.getElementById("volume").innerHTML = (video.volume / 100) + "%";
 });
 
 var pause = document.getElementById("pause");
@@ -78,9 +78,9 @@ mute.addEventListener("click", function() {
 var slider = document.getElementById("slider");
 slider.addEventListener("change", function() {
 	video = document.getElementById("player1");
-	console.log(this.value);
-	video.volume = this.value;
-	document.getElementById("volume").innerHTML = video.volume + "%";
+	console.log(this.value+ "%");
+	video.volume = this.value / 100;
+	document.getElementById("volume").innerHTML = video.volume * 100 + "%";
 });
 
 // Utilize the existing oldSchool class on the video element
