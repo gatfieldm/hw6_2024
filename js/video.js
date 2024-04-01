@@ -1,15 +1,3 @@
-var video = document.getElementById("player1");
-var volume = document.getElementById("volume");
-var slider = document.getElementById("slider");
-var mute = document.getElementById("mute");
-var play = document.getElementById("play");
-var pause = document.getElementById("pause");
-var slower = document.getElementById("slower");
-var faster = document.getElementById("faster");
-var skip = document.getElementById("skip");
-var vintage = document.getElementById("vintage");
-var orig = document.getElementById("orig");
-
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
