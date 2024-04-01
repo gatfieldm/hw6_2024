@@ -1,4 +1,4 @@
-
+var video;
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	// initialize video element, turn off autoplay, turn off looping
